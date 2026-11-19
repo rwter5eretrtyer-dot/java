@@ -1,0 +1,12 @@
+digraph Schema {
+ graph [rankdir=LR,bgcolor="white",fontname="DejaVu Sans",pad="0.35",nodesep="0.65",ranksep="1.0"];
+ node [shape=record,style="rounded,filled",fillcolor="#F5F7FE",color="#9CACCB",fontname="DejaVu Sans",fontsize=11,margin="0.18"];
+ edge [color="#7585B5",arrowhead=none,penwidth=1.6];
+ users [label="{course_users|PK id : BIGINT\lemail : VARCHAR unique\l}"];
+ tasks [label="{tasks|PK id : BIGINT\ltitle : VARCHAR\ldescription : VARCHAR\lpriority : VARCHAR\lstatus : VARCHAR\lcreated_at : TIMESTAMP\lFK owner_id : BIGINT\l}",fillcolor="#E6EBFF"];
+ tags [label="{tags|PK id : BIGINT\lname : VARCHAR unique\l}"];
+ task_tags [label="{task_tags|PK,FK task_id\lPK,FK tag_id\l}"];
+ users -> tasks [label="1 : N",fontname="DejaVu Sans"];
+ tasks -> task_tags [label="1 : N",fontname="DejaVu Sans"];
+ tags -> task_tags [label="1 : N",fontname="DejaVu Sans"];
+}

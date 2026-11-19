@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dev,console
+  main:
+    web-application-type: none
+app:
+  name: TaskFlow Core
+  max-tasks: 5
+  default-priority: MEDIUM

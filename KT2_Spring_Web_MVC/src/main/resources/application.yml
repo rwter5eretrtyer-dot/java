@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dev
+app:
+  name: TaskFlow MVC
+  max-tasks: 100
+  default-priority: MEDIUM
+server:
+  port: 8080

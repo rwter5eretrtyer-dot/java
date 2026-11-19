@@ -1,0 +1,26 @@
+### Создать задачу
+POST http://localhost:8080/tasks
+Content-Type: application/json
+
+{"title":"Подготовить пересдачу","description":"Прочитать теорию","priority":"HIGH"}
+
+### Все задачи
+GET http://localhost:8080/tasks
+
+### Фильтр статуса
+GET http://localhost:8080/tasks?status=NEW
+
+### Отдельная задача
+GET http://localhost:8080/tasks/1
+
+### Изменить статус
+PATCH http://localhost:8080/tasks/1/status
+Content-Type: application/json
+
+{"status":"DONE"}
+
+### Статистика
+GET http://localhost:8080/tasks/stats
+
+### Удалить
+DELETE http://localhost:8080/tasks/1
